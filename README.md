@@ -7,12 +7,12 @@ This React app has a number of bugs and does not meet all of the requirements be
 <img width="300" alt="Screen Shot 2019-11-21 at 9 26 16 AM" src="https://user-images.githubusercontent.com/49081448/69361282-0258c100-0c41-11ea-8d94-7568ec736431.png">
 
 ## Requirements
+- No errors in the console.
 - The form should reset after adding an athlete.
 - Clicking the Delete button should remove the athlete from the list.
 - Clicking on the Edit button should update the form data, even if another athlete is already loaded in the edit form.
 - You should be able to edit the name and position of an athlete.
 - When adding a user, if the position is `center`, the add button should be hidden.
-- No errors in the console.
 - There should be 2 columns, one with Add/Edit User and the other with View Users. The columns should stack on smaller devices.
 
 ## New Features
