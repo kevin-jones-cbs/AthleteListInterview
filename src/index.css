@@ -1,5 +1,15 @@
+body {
+ padding: 24px;
+}
+
+main {
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
 button,
 .button {
-	margin-bottom: 0 !important;
+	margin-bottom: 0;
 	margin-right: .5rem;
 }

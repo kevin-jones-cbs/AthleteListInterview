@@ -1,6 +1,4 @@
-import React from 'react'
-
-const UserTable = props => (
+export const AthleteTable = props => (
   <table>
     <thead>
       <tr>
@@ -10,15 +8,15 @@ const UserTable = props => (
       </tr>
     </thead>
     <tbody>
-      {props.users.length > 0 ? (
-        props.users.map(user => (
-          <tr key={user.position}>
-            <td>{user.name}</td>
-            <td>{user.position}</td>
+      {props.athletes.length > 0 ? (
+        props.athletes.map(athlete => (
+          <tr key={athlete.position}>
+            <td>{athlete.name}</td>
+            <td>{athlete.position}</td>
             <td>
               <button
                 onClick={() => {
-                  props.editRow(user)
+                  props.editRow(athlete)
                 }}
                 className="button muted-button"
               >
@@ -34,11 +32,9 @@ const UserTable = props => (
         ))
       ) : (
         <tr>
-          <td colSpan={3}>No users</td>
+          <td colSpan={3}>No athletes</td>
         </tr>
       )}
     </tbody>
   </table>
 )
-
-export default UserTable

@@ -1,7 +1,7 @@
-import React, { useState, Fragment } from 'react'
-import AddUserForm from './forms/AddUserForm'
-import EditUserForm from './forms/EditUserForm'
-import UserTable from './tables/UserTable'
+import { useState } from 'react'
+import { AddAthleteForm } from './forms/AddAthleteForm'
+import { EditAthleteForm } from './forms/EditAthleteForm'
+import { AthleteTable }from './tables/AthleteTable'
 
 const DATA = [
 		{ id: 1, name: 'Dan', position: 'Quarterback' },
@@ -15,59 +15,56 @@ const DEFAULT_FORM_DATA = { id: null, name: '', position: '' }
 
 const App = () => {
 
-	// Setting state
-	const [ users, setUsers ] = useState(DATA)
-	const [ currentUser, setCurrentUser ] = useState(DEFAULT_FORM_DATA)
-	const [ editing, setEditing ] = useState(false)
+	const [ athletes, setAthletes ] = useState(DATA)
+	const [ currentAthlete, setCurrentAthlete ] = useState(DEFAULT_FORM_DATA)
+	const [ isEditing, setIsEditing ] = useState(false)
 
-	// CRUD operations
-	const addUser = user => {
-		user.id = users.length + 1
-		setUsers([ ...users, user ])
+
+	const addAthlete = athlete => {
+		athlete.id = athletes.length + 1
+		setAthletes([ ...athletes, athlete ])
 	}
 
-	const updateUser = (id, updatedUser) => {
-		setEditing(false)
-
-		setUsers(users.map(user => (user.id === id ? updatedUser : user)))
+	const updateAthlete = (id, updatedAthlete) => {
+		setIsEditing(false)
+		setAthletes(athletes.map(athlete => (athlete.id === id ? updatedAthlete : athlete)))
 	}
 
-	const editRow = user => {
-		setEditing(true)
-
-		setCurrentUser({ id: user.id, name: user.name, position: user.position })
+	const editRow = athlete => {
+		setIsEditing(true)
+		setCurrentAthlete({ id: athlete.id, name: athlete.name, position: athlete.position })
 	}
 
 	return (
-		<div>
+		<main>
 			<h1>Team Roster</h1>
 			<div>
 				<div>
-					{editing ? (
+					{isEditing ? (
 						<>
-							<h2>Edit User</h2>
-							<EditUserForm
-								editing={editing}
-								setEditing={setEditing}
-								currentUser={currentUser}
-								updateUser={updateUser}
+							<h2>Edit Athlete</h2>
+							<EditAthleteForm
+								editing={isEditing}
+								setEditing={setIsEditing}
+								currentAthlete={currentAthlete}
+								updateAthlete={updateAthlete}
 							/>
 						</>
 					) : (
 						<>
-							<h2>Add User</h2>
-							<AddUserForm addUser={addUser} />
+							<h2>Add Athlete</h2>
+							<AddAthleteForm addAthlete={addAthlete} />
 						</>
 					)}
 				</div>
 				<div>
-					<h2>View Users</h2>
-					<UserTable users={users} editRow={editRow}/>
+					<h2>View Athletes</h2>
+					<AthleteTable athletes={athletes} editRow={editRow}/>
 				</div>
 			</div>
-		</div>
-		<span>Total Users: {users.length}</span>
+		<span>Total Athletes: {athletes.length}</span>
+		</main>
 	)
 }
 
-export default App
+export default App;
