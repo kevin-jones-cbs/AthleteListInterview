@@ -3,21 +3,21 @@ import AddUserForm from './forms/AddUserForm'
 import EditUserForm from './forms/EditUserForm'
 import UserTable from './tables/UserTable'
 
-const App = () => {
-	// Data
-	const usersData = [
-		{ id: 1, name: 'John', position: 'Quarterback' },
+const DATA = [
+		{ id: 1, name: 'Dan', position: 'Quarterback' },
 		{ id: 2, name: 'Ken', position: 'Running Back' },
-		{ id: 3, name: 'Jeffrey', position: 'Tight End' },
+		{ id: 3, name: 'Ryan', position: 'Tight End' },
 		{ id: 4, name: 'Nick', position: 'Running Back' },
 		{ id: 5, name: 'Sam', position: 'Safety' }
 	]
 
-	const initialFormState = { id: null, name: '', position: '' }
+const DEFAULT_FORM_DATA = { id: null, name: '', position: '' }
+
+const App = () => {
 
 	// Setting state
-	const [ users, setUsers ] = useState(usersData)
-	const [ currentUser, setCurrentUser ] = useState(initialFormState)
+	const [ users, setUsers ] = useState(DATA)
+	const [ currentUser, setCurrentUser ] = useState(DEFAULT_FORM_DATA)
 	const [ editing, setEditing ] = useState(false)
 
 	// CRUD operations
@@ -44,7 +44,7 @@ const App = () => {
 			<div>
 				<div>
 					{editing ? (
-						<Fragment>
+						<>
 							<h2>Edit User</h2>
 							<EditUserForm
 								editing={editing}
@@ -52,12 +52,12 @@ const App = () => {
 								currentUser={currentUser}
 								updateUser={updateUser}
 							/>
-						</Fragment>
+						</>
 					) : (
-						<Fragment>
+						<>
 							<h2>Add User</h2>
 							<AddUserForm addUser={addUser} />
-						</Fragment>
+						</>
 					)}
 				</div>
 				<div>
