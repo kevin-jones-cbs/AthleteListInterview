@@ -1,5 +1,8 @@
 {
   "name": "athlete-list",
+  "license": "UNLICENSED",
+  "description": "A simple React application to display a list of athletes.",
+  "author": "Kevin Jones",
   "version": "0.1.1",
   "private": true,
   "dependencies": {
