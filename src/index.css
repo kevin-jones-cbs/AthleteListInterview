@@ -13,3 +13,10 @@ button,
 	margin-bottom: 0;
 	margin-right: .5rem;
 }
+
+.logo {
+	position: fixed;
+	top: 8px;
+	left: 8px;
+	width: 128px;
+}

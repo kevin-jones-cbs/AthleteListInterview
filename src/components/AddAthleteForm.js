@@ -1,12 +1,12 @@
 import { useState } from 'react'
+import { DEFAULT_FORM_DATA } from '../App'
 
 export const AddAthleteForm = props => {
-	const initialFormState = { id: null, name: '', position: '' }
-	const [ athlete, setAthlete ] = useState(initialFormState)
-	const [ isButtonHidden, setIsButtonHidden] = useState(false)
+	const [ athlete, setAthlete ] = useState(DEFAULT_FORM_DATA);
+	const [ isButtonHidden, setIsButtonHidden] = useState(false);
 
 	const handleInputChange = event => {
-		const { name, value } = event.target
+		const { name, value } = event.target;
 
 		setAthlete({ ...athlete, [name]: value });
 		if (athlete.position.toLowerCase() === 'center') {
@@ -20,9 +20,10 @@ export const AddAthleteForm = props => {
 		<form
 			onSubmit={event => {
 				event.preventDefault()
-				if (!athlete.name || !athlete.position) return
+				if (!athlete.name || !athlete.position) return;
 
-				props.addAthlete(athlete)
+				props.addAthlete(athlete);
+				//setAthlete(DEFAULT_FORM_DATA);
 			}}
 		>
 			<label>Name</label>

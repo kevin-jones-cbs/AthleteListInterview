@@ -1,7 +1,9 @@
 import { useState } from 'react'
-import { AddAthleteForm } from './forms/AddAthleteForm'
-import { EditAthleteForm } from './forms/EditAthleteForm'
-import { AthleteTable }from './tables/AthleteTable'
+import { AddAthleteForm } from './components/AddAthleteForm'
+import { EditAthleteForm } from './components/EditAthleteForm'
+import { AthleteTable }from './components/AthleteTable'
+
+export const DEFAULT_FORM_DATA = { id: null, name: '', position: '' };
 
 const DATA = [
 		{ id: 1, name: 'Dan', position: 'Quarterback' },
@@ -9,34 +11,38 @@ const DATA = [
 		{ id: 3, name: 'Ryan', position: 'Tight End' },
 		{ id: 4, name: 'Nick', position: 'Running Back' },
 		{ id: 5, name: 'Sam', position: 'Safety' }
-	]
-
-const DEFAULT_FORM_DATA = { id: null, name: '', position: '' }
+	];
 
 const App = () => {
 
-	const [ athletes, setAthletes ] = useState(DATA)
-	const [ currentAthlete, setCurrentAthlete ] = useState(DEFAULT_FORM_DATA)
-	const [ isEditing, setIsEditing ] = useState(false)
-
+	const [ athletes, setAthletes ] = useState(DATA);
+	const [ currentAthlete, setCurrentAthlete ] = useState(DEFAULT_FORM_DATA);
+	const [ isEditing, setIsEditing ] = useState(false);
 
 	const addAthlete = athlete => {
-		athlete.id = athletes.length + 1
-		setAthletes([ ...athletes, athlete ])
+		athlete.id = athletes.length + 1;
+		setAthletes([ ...athletes, athlete ]);
 	}
 
 	const updateAthlete = (id, updatedAthlete) => {
-		setIsEditing(false)
-		setAthletes(athletes.map(athlete => (athlete.id === id ? updatedAthlete : athlete)))
+		setIsEditing(false);
+		setAthletes(athletes.map(athlete => (athlete.id === id ? updatedAthlete : athlete)));
 	}
 
 	const editRow = athlete => {
-		setIsEditing(true)
-		setCurrentAthlete({ id: athlete.id, name: athlete.name, position: athlete.position })
+		setIsEditing(true);
+		setCurrentAthlete({ id: athlete.id, name: athlete.name, position: athlete.position });
 	}
 
 	return (
 		<main>
+			 <img
+				src="https://asset.maxpreps.io/includes/images/logos/maxpreps_1200x630.png"
+				alt="MaxPreps Logo"
+				className='logo'
+				width={128}
+			/>
+
 			<h1>Team Roster</h1>
 			<div>
 				<div>

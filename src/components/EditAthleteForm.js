@@ -20,7 +20,6 @@ export const EditAthleteForm = props => {
     <form
       onSubmit={event => {
         event.preventDefault()
-
         props.updateAthlete(athlete.id, athlete)
       }}
     >
