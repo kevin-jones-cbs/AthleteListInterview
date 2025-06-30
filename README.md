@@ -12,9 +12,10 @@ This React app has a number of bugs and does not meet all of the requirements be
 - Clicking the Delete button should remove the athlete from the list.
 - Clicking on the Edit button should update the form data, even if another athlete is already loaded in the edit form.
 - You should be able to edit the name and position of an athlete.
-- When adding a user, if the position is `center`, the add button should be hidden.
-- There should be 2 columns, one with Add/Edit User and the other with View Users. The columns should stack on smaller devices.
+- When adding an athlete, if the position is `center`, the add button should be hidden.
+- There should be 2 columns, one with the Add/Edit Athlete form and the other with View Athletes table. The columns should stack on smaller devices.
 
 ## New Features
 - Install a basic linter package for the project.
-- Replace the hard-coded array of athletes with the athletes returned from a GET request to `https://c2c02533-38ca-4a9d-8419-aedc8dd9f0d9.mock.pstmn.io/athletes/v1`. *Note: editing/deleting don't need to be hooked up to an API.*
+- Memoize the functions defined in App.js.
+- Describe how you would integrate an API endpoint to fetch the roster data instead of hard-coded data.
