@@ -36,15 +36,14 @@ const App = () => {
 
 	return (
 		<main>
-			 <img
+			<img
 				src="https://asset.maxpreps.io/includes/images/logos/maxpreps_1200x630.png"
 				alt="MaxPreps Logo"
 				className='logo'
 				width={128}
 			/>
-
 			<h1>Team Roster</h1>
-			<div>
+			<div className='container'>
 				<div>
 					{isEditing ? (
 						<>
@@ -67,7 +66,7 @@ const App = () => {
 					<h2>View Athletes</h2>
 					<AthleteTable athletes={athletes} editRow={editRow}/>
 				</div>
-			</div>
+			
 		<span>Total Athletes: {athletes.length}</span>
 		</main>
 	)
