@@ -43,7 +43,7 @@ const App = () => {
 				width={128}
 			/>
 			<h1>Team Roster</h1>
-			<div className='container'>
+			<div className='roster'>
 				<div>
 					{isEditing ? (
 						<>

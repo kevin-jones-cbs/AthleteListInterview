@@ -20,3 +20,7 @@ button,
 	left: 8px;
 	width: 128px;
 }
+
+table {
+	white-space: nowrap;
+}
