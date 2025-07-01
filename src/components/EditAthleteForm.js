@@ -7,13 +7,13 @@ export const EditAthleteForm = props => {
     () => {
       setAthlete(props.currentAthlete)
     },
-    []
+    [props.currentAthlete]
   )
 
   const handleInputChange = event => {
     const { name, value } = event.target
 
-    athlete[name] = value;
+    setAthlete({ ...athlete, [name]: value })
   }
 
   return (
