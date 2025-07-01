@@ -23,7 +23,6 @@ export const AddAthleteForm = props => {
 				if (!athlete.name || !athlete.position) return;
 
 				props.addAthlete(athlete);
-				//setAthlete(DEFAULT_FORM_DATA);
 			}}
 		>
 			<label>Name</label>
