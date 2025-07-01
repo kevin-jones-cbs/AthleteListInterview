@@ -17,5 +17,7 @@ This React app has a number of bugs and does not meet all of the requirements be
 
 ## New Features
 - Install a basic linter package for the project.
+- Fetch the data from the following endpoint instead of using hard-coded data. You do NOT need to implement the ability to add, edit, or delete via an API.
+    - `https://04686f0d-d5ad-4e3b-85e2-d51457898a5b.mock.pstmn.io/test/athletes/`
 - Memoize the functions defined in App.js.
 - Describe how you would integrate an API endpoint to fetch the roster data instead of hard-coded data.
