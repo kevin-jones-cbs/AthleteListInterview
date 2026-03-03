@@ -17,7 +17,7 @@ When **section 1** is complete, the app should look like this:
 
 | Mobile | Desktop |
 |--------|---------|
-| <img width="300" alt="mobile" src="https://user-images.githubusercontent.com/49081448/69361282-0258c100-0c41-11ea-8d94-7568ec736431.png" style="max-width: 100%; height: auto;"> | <img width="600" alt="desktop" src="https://user-images.githubusercontent.com/49081448/69361281-01279400-0c41-11ea-8e98-35d37ec3380e.png" style="width: 100%; max-width: 600px;"> |
+| <img width="250" alt="mobile" src="https://user-images.githubusercontent.com/49081448/69361282-0258c100-0c41-11ea-8d94-7568ec736431.png" style="width: 100%; max-width: 250px"> | <img width="400" alt="desktop" src="https://user-images.githubusercontent.com/49081448/69361281-01279400-0c41-11ea-8e98-35d37ec3380e.png" style="width: 100%; max-width: 400px;"> |
 
 ## Section 2: AI-Assistance Allowed
 
